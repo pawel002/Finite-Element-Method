@@ -3,9 +3,15 @@
 # Solution 
 <img src="https://github.com/pawel002/fem-diff-equation/blob/main/images/equation.png"
      title="Equation."
-     style="display: inline-block; margin: 0 auto; max-width: 300px">>
+     style="display: inline-block; margin: 0 auto; max-width: 300px display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
      
 <img src="https://github.com/pawel002/fem-diff-equation/blob/main/images/equation.png"
-      title="Numerical solution for n=1000.
-      style="display: inline-block; margin: 0 auto; max-width: 300px">">
+      title="Numerical solution for n=1000."
+      style="display: inline-block; margin: 0 auto; max-width: 300px display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;">
 

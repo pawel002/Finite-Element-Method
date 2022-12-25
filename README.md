@@ -13,9 +13,7 @@ Numerical solution for n=1000:
 </p>
 
 ## Description
-This repository contains a project made for Differential Equation course at AGH University in Kraków.
-Derivation of weak formulation for the equation can be seen [here](https://github.com/pawel002/fem-diff-equation/blob/main/images/FEM.pdf) in Polish.
-To compile the code run:
+This repository contains a project made for the Differential Equations course at AGH University in Kraków. The derivation of the weak formulation for the equation can be seen [here](https://github.com/pawel002/fem-diff-equation/blob/main/images/FEM.pdf) in Polish. To compile the code, run:
 ```
 g++ -I .\Eigen .\main.cpp -o main
 ```

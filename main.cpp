@@ -8,6 +8,8 @@
 
 
 // COMPILED USING g++ -I .\Eigen .\main.cpp -o main -lmgl
+// REQUIRES MGL2 
+// linux installation: sudo apt install libmgl-dev
 
 int main()
 {   

@@ -20,4 +20,5 @@ g++ -I .\Eigen .\main.cpp -o main
 Integration method: [Gauss-Legendre Quadrature](https://en.wikipedia.org/wiki/Gaussian_quadrature). <br />
 Sparse matrix operations: [Eigen](https://eigen.tuxfamily.org/index.php?title=Main_Page). <br />
 Plotting using short matplotlib and python programm. <br />
+In linux version, mathgl is used for plotting.  <br />
 Eigen is included in the files.

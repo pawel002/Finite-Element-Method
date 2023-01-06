@@ -1,13 +1,13 @@
 #include "utils/integrate.hpp"
-#include "Eigen/Sparse"
 #include "utils/solver.hpp"
+#include "utils/plot.hpp"
 
 #include <chrono>
 #include <fstream>
 #include "bits/stdc++.h"
 
 
-// COMPILED USING g++ -I .\Eigen .\main.cpp -o main
+// COMPILED USING g++ -I .\Eigen .\main.cpp -o main -lmgl
 
 int main()
 {   
@@ -16,6 +16,7 @@ int main()
     std::cin >> n; 
     double from = 0.0;
     double to = 3.0;
+    double x = (to - from) / (double)(n - 1);
     Integrator::Quadrature<2> gl2;
 
     std::function<double(double)> eps = [](double x){
@@ -42,12 +43,25 @@ int main()
 
 
     // Create and open a text file
-    std::ofstream save(".\\saveplot\\plot.txt");
-    double x = (to - from) / (double)(n - 1);
-    for(int i=0; i<n; i++){
-        save << from + x * i << " " << solver.evaluateSolution(from + x * i) << "\n";
-    }
-    save.close();
+    std::cout << "Czy chcesz zapisac - yes(tak)\n";
+    std::string saveString;
+    std::cin >> saveString;
 
-    system("python -u \".\\saveplot\\plot.py\"");
+    if(saveString == "yes"){
+        std::ofstream save(".\\saveplot\\plot.txt");
+        for(int i=0; i<n; i++){
+            save << from + x * i << " " << solver.evaluateSolution(from + x * i) << "\n";
+        }
+        save.close();
+    }
+
+    std::cout << "Plotting... \n";
+    std::vector<double> X, Y;
+    for(int i=0; i<n; i++){
+        X.push_back(from + x * i);
+        Y.push_back(solver.evaluateSolution(from + x * i));
+    }
+
+    plot(from, to, n, X, Y, "wykres.png");
+    std::cout << "Wykres zapisany.\n";
 }
